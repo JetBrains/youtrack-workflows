@@ -68,7 +68,7 @@ daily at 10 : 00 : 00 [issue.State == {On duty} && issue.Day of week != 5 && iss
     }
   }
 }
-
+```
 Manage day of week:
 ```java
 schedule rule Set day of week
@@ -76,7 +76,7 @@ schedule rule Set day of week
 daily at 00 : 00 : 00 [issue.State == {On duty}] {
   Day of week = (Day of week + 1) % 7;
 }
-
+```
 Disable dropping Assignee:
 ```java
 rule Assert Assignee not null
