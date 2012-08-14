@@ -3,7 +3,6 @@ Additional Notifications
 
 Notify the previous assignee when issue is reassigned.
 
-Notify the previous issue assignee
 ```java
 rule Notify on issue reassign
 when isReported() && Assignee.changed {
