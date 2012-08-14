@@ -1,6 +1,8 @@
 Semi-Automatic 'Wait for Reply' State Management
 ====================
-When a comment from an external user is required, internal user sets issue state to 'Wait for reply' manually. When a comment is added, issue is automatically reopened. Assignee gets a notification if no comment is added within 5 days.
+* When a comment from an external user is required, internal user sets issue state to 'Wait for reply' manually. 
+* When a comment is added, issue is automatically reopened. 
+* Assignee gets a notification if no comment is added within 5 days.
 
 >Requirements:
 >state 'Wait for Reply', 
