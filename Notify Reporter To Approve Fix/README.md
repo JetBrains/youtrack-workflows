@@ -13,6 +13,7 @@ when State.becomes({Pending verification}) {
  + getId() + "Please review the applied fix for your issue and set the appropriate state.");
   Assignee = reporter;
 }
+```
 State life-cycle with verified by reporter value
 ```java
 statemachine State lifecycle with verification by reporter for field State {
