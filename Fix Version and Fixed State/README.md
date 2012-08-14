@@ -1,8 +1,7 @@
 Fix Version and Fixed State 
 ====================
 
-    Require Fix Version value for Fixed state.
-    Set an issue state to Fixed when Fixed Version is added.
+This workflow requires 'Fix Version' for 'Fixed' state. Also it sets an issue state to 'Fixed' when 'Fixed Version' is added.
 
 Require Fix Version value for Fixed state
 ```java
