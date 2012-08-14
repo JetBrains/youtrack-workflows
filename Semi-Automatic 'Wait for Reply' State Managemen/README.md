@@ -3,10 +3,10 @@ Semi-Automatic 'Wait for Reply' State Management
 When a comment from an external user is required, internal user sets issue state to 'Wait for reply' manually. When a comment is added, issue is automatically reopened. Assignee gets a notification if no comment is added within 5 days.
 
 >Requirements:
->    state 'Wait for Reply'
->    group 'developers'
+>state 'Wait for Reply', 
+>group 'developers'
 
-	Statemachine with 'Waiting for reply' state:
+Statemachine with 'Waiting for reply' state:
 ```java
 statemachine States for field State {
 
@@ -31,6 +31,7 @@ statemachine States for field State {
   }
 
 }
+```
 Changes issue state from 'Wait for reply' to 'Open' when comment is added by an external user
 ```java
 rule Wait for reply: reopen on answer
