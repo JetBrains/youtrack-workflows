@@ -1,14 +1,14 @@
 QA Verification Process
 ====================
 
-    Notifies a user when he/she is set to verify an issue
-    Requires setting 'Verified in build' value when changing state to 'Verified', and sets current user name for 'Verified by' field value.
-    Requires adding a comment when changing state to 'W/O verification'.
+*   Notifies a user when he/she is set to verify an issue
+*   Requires setting 'Verified in build' value when changing state to 'Verified', and sets current user name for 'Verified by' field value.
+*   Requires adding a comment when changing state to 'W/O verification'.
     
 >Requirements:
->        field 'Verified by' of 'user' type
->        field 'Verified in build' of 'build' type
->        state 'W/O verification'
+>field 'Verified by' of 'user' type,
+>field 'Verified in build' of 'build' type,
+>state 'W/O verification'
 
 ```java
 rule Notify on set Verify by user
@@ -25,6 +25,7 @@ when isReported() && Verified by.changed {
 
   }
 }
+```
 Set 'verified in build' value
 ```java
 rule Set Verified State on specifying Verified In Build
@@ -32,6 +33,7 @@ rule Set Verified State on specifying Verified In Build
 when Verified in build != null && State != {Verified} {
   State = {Verified};
 }
+```
 Set 'verified by' user name when adding 'verified in build' value
 ```java
 rule Set verified by user on specifying Verified in build
@@ -41,6 +43,7 @@ when Verified in build != null && Verified in build.changed {
 }
 ```
 States machine
+```java
 ...
 state W/O verification {
   enter {
@@ -60,8 +63,8 @@ state Verified {
   exit {
     Verified in build = null;
   }
-```
 ...
+```
 Require adding a new comment when changing an issue state
 ```java
 rule Require comment on w/o verification
