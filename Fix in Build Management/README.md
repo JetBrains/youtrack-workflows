@@ -1,9 +1,9 @@
 Fix in Build Management 
 ====================
 
-    Clear Fixed in build value when issue becomes unresolved.
-    Copy Fixed in Build value from duplicate.
-    Set Fixed in Build value for duplicate when it's specified in the main issue.
+Clear Fixed in build value when issue becomes unresolved.
+Copy Fixed in Build value from duplicate.
+Set Fixed in Build value for duplicate when it's specified in the main issue.
 
 Clear Fixed in build on issue unresolve
 ```java
