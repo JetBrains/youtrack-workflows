@@ -1,11 +1,11 @@
 Intelligent Duplicates Management 
 ====================
 
-    Automatically relink all duplicates directly to the main duplicated issue.
-    User can't remove all duplicate links from issue in Duplicate state.
-    Set issue state to duplicate when a Duplicate link is added.
-    Raise the Priority of a duplicated issue.
-    Require adding a duplicate link when changing issue state to Duplicate.
+*   Automatically relink all duplicates directly to the main duplicated issue.
+*   User can't remove all duplicate links from issue in Duplicate state.
+*   Set issue state to duplicate when a Duplicate link is added.
+*   Raise the Priority of a duplicated issue.
+*   Require adding a duplicate link when changing issue state to Duplicate.
 
 Users cannot remove all duplicate links from issue in state Duplicate
 ```java
