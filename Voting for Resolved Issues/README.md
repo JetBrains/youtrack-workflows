@@ -1,8 +1,6 @@
 Voting for Resolved Issues 
 ====================
 
-Disable voting for resolved issues.
-
 Disable voting for resolved issues
 ```java
 rule jetbrains-youtrack-doNotVoteForResolvedIssue
