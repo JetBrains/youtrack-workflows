@@ -1,14 +1,14 @@
 Time Management 
 ====================
 
-    Change issue state in time automatically.
-    Notify an issue assignee, project lead or subsystem owner when issue life-cycle is violated.
+*   Change issue state in time automatically.
+*   Notify an issue assignee, project lead or subsystem owner when issue life-cycle is violated.
     
 >Requirements:
->        subsystem 'Support'
->        state 'Overdue'
->        state 'Wait for reproduce'
->        state 'Approved'
+*        subsystem 'Support',
+*        state 'Overdue',
+*        state 'Wait for reproduce',
+*        state 'Approved',
 
 Time Management for State field
 ```java
