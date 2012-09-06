@@ -7,7 +7,7 @@ To use a ready workflow file in your YouTrack, please:
 *    Download a `workflow zip file`
 *    Import the workflow to your project
 
-If you are a project administrator then import the workflow in Administration > Projects > project > Workflow tab.
+If you are a project administrator then import the workflow in Administration > Projects > _project_ > Workflow tab.
 If you have system administrator permissions, then import the workflow in Administration > Workflow page and attach it to one or multiple projects.
 
 You can also try any of the custom workflows listed below in our [YouTrack InCloud test instance](http://workflows.myjetbrains.com/youtrack/). All registered users get project admin permissions.
