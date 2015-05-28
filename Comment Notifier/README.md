@@ -12,7 +12,7 @@ when comments.added.last.text.contains("@", ignoreCase) {
     var mentionedUserEndIndex = mentionedUser.indexOf(" ", opts); 
     var mentionedUserName = mentionedUser.substring(0, mentionedUserEndIndex); 
     for each user in {group: All Users}.getUsers() { 
-      if (user.login == mentionedUserName) { 
+      if (user.login.eq(mentionedUserName, opts)) { 
         user.notify("You were mentioned in a comment on " + issue.project.name, "Your name was mentioned in comment " + getId() + "<br/><br/>\"" + comments.last.text + "\" - " + comments.last.author.fullName); 
       } 
     } 
