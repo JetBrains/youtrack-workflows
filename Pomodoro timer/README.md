@@ -5,7 +5,7 @@ It implements the popular time tracking technique 'Pomodoro' (http://www.pomodor
 >Requirements:
 >    'Pomodoro state' of type state[1],
 >    'Pomodoro interruption' of type enum[1],
->    'Pomodoro coutdown' of type integer
+>    'Pomodoro countdown' of type integer
 
 The rule defines timer state transitions
 ```java
