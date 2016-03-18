@@ -1,4 +1,4 @@
-Welcome to YouTrack Workflow Repository!
+Welcome to YouTrack Custom Workflow Repository!
 ==================
 
 Go
