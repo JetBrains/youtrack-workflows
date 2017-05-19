@@ -1,0 +1,11 @@
+rule DefaultBug template for external users
+
+when !isReported() && description == null {
+  description = "Description"+"\n"
+      +"Summary"+"\n"
+      +"Steps to reproduce"+"\n"
+      +"Expected Results"+"\n"
+      +"Actual Results"+"\n"
+      +"Source URL"+"\n"
+      +"\n"+"Attachments";}
+
