@@ -16,4 +16,4 @@ Continue
 -----------
 *    New to workflow in YouTrack? Please take a look at [the workflow guide](https://www.jetbrains.com/help/youtrack/incloud/?topic=Workflow-Tutorial).
 *    Ready to create your own workflow rule? Check out the [documentation](https://www.jetbrains.com/help/youtrack/incloud/?topic=Workflow-Guide).
-*    Want to share your workflow? [Contact us](mailto:youtrack-feedback@jetbrains.com) or [create an issue](http://youtrack.jetbrains.com/dashboard/JT).
+*    Want to share your workflow? [Contact us](mailto:youtrack-feedback@jetbrains.com) or [create an issue](https://youtrack.jetbrains.com/issues/JT).
