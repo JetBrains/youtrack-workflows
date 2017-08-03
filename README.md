@@ -14,6 +14,6 @@ You can also try any of the custom workflows listed below in our [YouTrack InClo
 
 Continue
 -----------
-*    New to workflow in YouTrack? Please take a look at [the workflow guide](http://confluence.jetbrains.net/display/YTD5/Workflow+Guide).
-*    Ready to create your own workflow rule? Use [YouTrack Workflow Editor](http://www.jetbrains.com/youtrack/download/index.html).
+*    New to workflow in YouTrack? Please take a look at [the workflow guide](https://www.jetbrains.com/help/youtrack/incloud/?topic=Workflow-Tutorial).
+*    Ready to create your own workflow rule? Check out the [documentation](https://www.jetbrains.com/help/youtrack/incloud/?topic=Workflow-Guide).
 *    Want to share your workflow? [Contact us](mailto:youtrack-feedback@jetbrains.com) or [create an issue](http://youtrack.jetbrains.com/dashboard/JT).
