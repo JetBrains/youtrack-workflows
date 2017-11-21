@@ -10,6 +10,8 @@ Set up
 This project is NPM-based and allows downloading workflows are JS-scripts
 from youtrack server and uploading them back to server.
 
+Suggested NPM version is 8.9.1 or higher.
+
 Run `npm i` to install development dependencies.
 
 The following servers are supported:
@@ -17,7 +19,7 @@ The following servers are supported:
  where every registered user has Project Admin permissions; consider this instance as 
  a playground and testing sandbox
 * your own instance (Standalone or InCloud)
-* your own instance with HTTPS access with self-signed SSL certificate
+* your own instance with HTTPS access with private signed SSL certificate
 
 Each server requires a list of properties to be set using `npm config set` command.
 For example, to set a token in the following section, use the following command 
@@ -40,7 +42,7 @@ You can easily check the current values of your parameters with the following co
 [Manage-Permanent-Token](https://www.jetbrains.com/help/youtrack/standalone/Manage-Permanent-Token.html))
 * `host_own`: url of your server (e.g. "http://localhost:8081")
 
-### your instance with self-signed SSL certificate
+### your instance with private signed SSL certificate
 
 * `token_ssl`: permanent token for your account on this server (see 
 [Manage-Permanent-Token](https://www.jetbrains.com/help/youtrack/standalone/Manage-Permanent-Token.html))
@@ -67,7 +69,7 @@ npm run list-own
 npm run download-own -- <wf-name>
 npm run upload-own -- <wf-name>
 
-# At your own instance with self-signed SSL certificate
+# At your own instance with private signed SSL certificate
 npm run list-ssl
 npm run download-ssl -- <wf-name>
 npm run upload-ssl -- <wf-name>

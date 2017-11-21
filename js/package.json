@@ -19,17 +19,15 @@
     "list-test": "cross-env youtrack-workflow list --host=$npm_package_config_host_test --token=$npm_config_token_test",
     "list-own": "cross-env youtrack-workflow list --host=$npm_config_host_own --token=$npm_config_token_own",
     "list-ssl": "cross-env NODE_EXTRA_CA_CERTS=\"$npm_config_cert_ssl\" youtrack-workflow list --host=$npm_package_config_host_ssl --token=$npm_config_token_ssl",
-
     "download-test": "cross-env youtrack-workflow download --host=$npm_package_config_host_test --token=$npm_config_token_test",
     "download-own": "cross-env youtrack-workflow download --host=$npm_config_host_own --token=$npm_config_token_own",
     "download-ssl": "cross-env NODE_EXTRA_CA_CERTS=\"$npm_config_cert_ssl\" youtrack-workflow download --host=$npm_package_config_host_ssl --token=$npm_config_token_ssl",
-
     "upload-test": "cross-env youtrack-workflow upload --host=$npm_package_config_host_test --token=$npm_config_token_test",
     "upload-own": "cross-env youtrack-workflow upload --host=$npm_config_host_own --token=$npm_config_token_own",
     "upload-ssl": "cross-env NODE_EXTRA_CA_CERTS=\"$npm_config_cert_ssl\" youtrack-workflow upload --host=$npm_package_config_host_ssl --token=$npm_config_token_ssl"
   },
   "devDependencies": {
-    "cross-env": "5.0.5",
+    "cross-env": "5.1.1",
     "@jetbrains/youtrack-scripting": "0.0.20",
     "@jetbrains/youtrack-scripting-api": "2017.4.37672"
   }
