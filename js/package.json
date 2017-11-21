@@ -31,6 +31,6 @@
   "devDependencies": {
     "cross-env": "5.0.5",
     "@jetbrains/youtrack-scripting": "0.0.20",
-    "@jetbrains/youtrack-scripting-api": "1.0.34456"
+    "@jetbrains/youtrack-scripting-api": "2017.4.37672"
   }
 }
