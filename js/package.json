@@ -1,0 +1,20 @@
+{
+  "name": "custom-workflows-repository",
+  "version": "1.0.0",
+  "description": "Custom Workflows for YouTrack",
+  "author": "YouTrack Community",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/JetBrains/youtrack-workflows.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JetBrains/youtrack-workflows/issues"
+  },
+  "homepage": "https://github.com/JetBrains/youtrack-workflows#readme",
+  "config": {
+  },
+  "scripts": {
+    "test": "'echo Test'"
+  }
+}
