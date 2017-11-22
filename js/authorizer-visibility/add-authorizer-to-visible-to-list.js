@@ -8,6 +8,7 @@ exports.rule = entities.Issue.onChange({
     return fs.isChanged(ctx.AuthBy) && fs.AuthBy;
   },
   action: function(ctx) {
+    var issue = ctx.issue;
     issue.permittedUsers.add(issue.fields.AuthBy);
     workflow.message('The issue is now visible to ' +
       issue.fields.AuthBy.fullName);
