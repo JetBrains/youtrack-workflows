@@ -73,4 +73,7 @@ npm run upload-own -- <wf-name>
 npm run list-ssl
 npm run download-ssl -- <wf-name>
 npm run upload-ssl -- <wf-name>
+
+# Make a ZIP archive to upload it to YouTrack manually
+npm run zip -- <wf-name>
 ```
