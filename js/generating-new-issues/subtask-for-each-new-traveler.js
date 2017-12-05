@@ -4,7 +4,8 @@ exports.rule = entities.Issue.onChange({
   title: 'Create a subtask for each new traveler',
   guard: function(ctx) {
     var fs = ctx.issue.fields;
-    return fs.Type.name === fs.Type.GroupTrip.name &&
+    return ctx.issue.isReported &&
+      fs.Type && fs.Type.name === ctx.Type.GroupTrip.name &&
       fs.Travelers.added.isNotEmpty();
   },
   action: function(ctx) {

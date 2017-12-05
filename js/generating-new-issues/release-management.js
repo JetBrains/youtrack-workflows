@@ -18,6 +18,7 @@ exports.rule = entities.Issue.onChange({
       newIssue.links['subtask of'].add(issue);
     };
     
+    createIssue('Update distribution', ctx.Subsystem.Distribution);
     createIssue('Update documentation', ctx.Subsystem.Documentation);
     createIssue('Update "What\'s new"', ctx.Subsystem.Site);
     createIssue('Blog post', ctx.Subsystem.Blog);
@@ -32,6 +33,7 @@ exports.rule = entities.Issue.onChange({
     },
     Subsystem: {
       type: entities.OwnedField.fieldType,
+      Distribution: {},
       Documentation: {},
       Site: {},
       Blog: {},
