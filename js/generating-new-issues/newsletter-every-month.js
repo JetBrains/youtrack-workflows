@@ -1,4 +1,4 @@
-var entities = require('v1/entities');
+var entities = require('@jetbrains/youtrack-scripting-api/entities');
 
 var MONTHS = [
   "January", "February", "March", "April",
