@@ -1,7 +1,7 @@
 var entities = require('@jetbrains/youtrack-scripting-api/entities');
 
 exports.rule = entities.Issue.onChange({
-  title: 'Release Management',
+  title: 'Release management',
   guard: function(ctx) {
     var issue = ctx.issue;
     return issue.becomesReported &&
@@ -15,6 +15,7 @@ exports.rule = entities.Issue.onChange({
         name + ' for ' + issue.summary);
       newIssue.fields.Subsystem = subsystem;
       newIssue.fields.Type = ctx.Type.Task;
+      newIssue.links['subtask of'].add(issue);
     };
     
     createIssue('Update documentation', ctx.Subsystem.Documentation);

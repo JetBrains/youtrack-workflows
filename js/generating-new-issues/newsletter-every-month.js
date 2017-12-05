@@ -9,7 +9,7 @@ var MONTHS = [
 var DAY_IN_MS = 24 * 60 * 60 * 1000;
 
 exports.rule = entities.Issue.onSchedule({
-  title: 'Internal Newsletter',
+  title: 'Internal newsletter',
   search: '#DA-1', // anchor issue; it is required to ensure that
   // this rule is executed exactly once according to schedule
   cron: '0 0 19 15 1/1 ? *', // on the 15th day of every month at 19:00
