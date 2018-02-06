@@ -1,0 +1,12 @@
+{
+  "name" : "work-items-control",
+  "title" : "Work Items Control",
+  "description" : null,
+  "dependencies" : {
+    "@jetbrains/youtrack-scripting-api" : "^2017.4.38399"
+  },
+  "youtrack" : {
+    "autoAttached" : false,
+    "readOnly" : false
+  }
+}
