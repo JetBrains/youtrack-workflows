@@ -30,7 +30,7 @@
   "devDependencies": {
     "archiver": "2.0.0",
     "cross-env": "5.1.1",
-    "@jetbrains/youtrack-scripting": "0.0.20",
-    "@jetbrains/youtrack-scripting-api": "2017.4.37672"
+    "@jetbrains/youtrack-scripting": "0.0.22",
+    "@jetbrains/youtrack-scripting-api": "2018.1.39916"
   }
 }
