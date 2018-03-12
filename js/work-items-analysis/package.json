@@ -1,0 +1,12 @@
+{
+  "name" : "work-items-analysis",
+  "title" : "Work Items Analisys",
+  "description" : null,
+  "dependencies" : {
+    "@jetbrains/youtrack-scripting-api" : "^2018.1.39916"
+  },
+  "youtrack" : {
+    "autoAttached" : false,
+    "readOnly" : false
+  }
+}
