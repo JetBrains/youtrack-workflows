@@ -6,9 +6,9 @@ var DAY_IN_MS = 24 * 60 * 60 * 1000;
 var HOURS_TO_WORK_A_WEEK = 40;
 
 exports.rule = entities.Issue.onSchedule({
-  title: 'Send report to the project lead on Monday',
+  title: 'Send report to the project lead every Monday',
   cron: '0 0 10 ? * MON',
-  search: '#WI-1', // // TODO: replace with anchor issue id
+  search: '#WI-1', // // TODO: replace with the ID of an anchor issue
   action: function(ctx) {
     var project = ctx.issue.project;
     
@@ -18,9 +18,9 @@ exports.rule = entities.Issue.onSchedule({
     from = from.getTime() - 7 * DAY_IN_MS; // the start of last Monday
     var to = from + 7 * DAY_IN_MS - 1; // the end of last Sunday
     
-    // Get a list of assignees from the bundle of assignees of the project,
+    // Get a list of assignees from the Assignee field in the project,
     // get a list of work items for each of them, and calculate sum of durations
-    // for each assignee work:
+    // for the work items reported by each assignee:
     var durations = {};
     var assignees = ctx.Assignee.values;
     assignees.forEach(function(assignee) {
@@ -39,9 +39,11 @@ exports.rule = entities.Issue.onSchedule({
       var duration = durations[assignee.login];
       var text = assignee.fullName + ' worked for ' + duration + ' hour(s)';
       if (duration > HOURS_TO_WORK_A_WEEK) {
-        text += ' (overtime for ' + (duration - HOURS_TO_WORK_A_WEEK) + ' hour(s)).\n';
+        text += ' (overtime for ' + (duration - HOURS_TO_WORK_A_WEEK) +
+          ' hour(s)).\n';
       } else if (duration < HOURS_TO_WORK_A_WEEK) {
-        text += ' (downtime for ' + ( HOURS_TO_WORK_A_WEEK - duration) + ' hour(s)).\n';
+        text += ' (downtime for ' + ( HOURS_TO_WORK_A_WEEK - duration) +
+          ' hour(s)).\n';
       } else {
         text += '.\n';
       }

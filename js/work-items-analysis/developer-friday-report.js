@@ -6,9 +6,9 @@ var DAY_IN_MS = 24 * 60 * 60 * 1000;
 var HOURS_TO_WORK_A_WEEK = 40;
 
 exports.rule = entities.Issue.onSchedule({
-  title: 'Send reminder to the developers on Friday if there is no enough work logged',
+  title: 'Remind developers on Friday if they have not logged enough work',
   cron: '0 0 16 ? * FRI',
-  search: '#WI-1', // // TODO: replace with anchor issue id
+  search: '#WI-1', // // TODO: replace with ID of an anchor issue
   action: function(ctx) {
     var project = ctx.issue.project;
     
@@ -18,9 +18,9 @@ exports.rule = entities.Issue.onSchedule({
     from.setHours(0, 0, 0, 0);
     from = from.getTime(); // the start of last Monday
     
-    // Get a list of assignees from the bundle of assignees of the project,
+    // Get a list of assignees from the Assignee field in the project,
     // get a list of work items for each of them, and calculate sum of durations
-    // for each assignee work:
+    // for the work items reported by each assignee:
     var durations = {};
     var assignees = ctx.Assignee.values;
     assignees.forEach(function(assignee) {
@@ -38,7 +38,8 @@ exports.rule = entities.Issue.onSchedule({
       if (duration < HOURS_TO_WORK_A_WEEK) {
         var subject = '[YouTrack, Reminder] Work done this week';
         var body = 'Hey ' + assignee.fullName + ',\n\n';
-        body += 'Looks like you have forgot to log some work: you have worked on ' +
+        body +=
+          'Looks like you have forgot to log some work: you have worked on ' +
           project.name + ' for ' + duration + ' hour(s) instead of ' +
           HOURS_TO_WORK_A_WEEK + ' required for you.\n';
         body += '\nSincerely yours, YouTrack\n';
