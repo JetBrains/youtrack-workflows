@@ -22,7 +22,6 @@ exports.rule = entities.Issue.onChange({
     var min = Number.MAX_VALUE;
     var user = null;
     assignees.forEach(function(assignee) {
-      console.log(assignee.login, numbers[assignee.login], min, (user || {}).login);
       if (numbers[assignee.login] < min) {
         min = numbers[assignee.login];
         user = assignee;
