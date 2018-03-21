@@ -1,0 +1,12 @@
+{
+  "name" : "newsletters",
+  "title" : "Newsletters",
+  "description" : null,
+  "dependencies" : {
+    "@jetbrains/youtrack-scripting-api" : "^2017.4.38030"
+  },
+  "youtrack" : {
+    "autoAttached" : false,
+    "readOnly" : false
+  }
+}
