@@ -1,1 +1,12 @@
-{"name":"authorizer-visibility","title":"Authorizer Visibility","description":null,"youtrack":{"autoAttached":false,"readOnly":false}}
+{
+  "name": "authorizer-visibility",
+  "title": "Authorizer Visibility",
+  "description": null,
+  "dependencies" : {
+    "@jetbrains/youtrack-scripting-api" : "^2017.4.38030"
+  },
+  "youtrack": {
+    "autoAttached": false,
+    "readOnly": false
+  }
+}

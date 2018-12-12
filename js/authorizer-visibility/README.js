@@ -1,5 +1,5 @@
 /*
-NB: README.md in worklflow packages will be supported soon.
+NB: README.md in workflow packages will be supported soon.
 
 This workflow is an addition to the 'Restricting Issue Visibility' use-case,
 described in detail in this blog post:
