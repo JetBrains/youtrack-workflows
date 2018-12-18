@@ -1,0 +1,12 @@
+{
+  "name" : "waiting-for-reply-tag",
+  "title" : "'Waiting for reply' Tag",
+  "description" : null,
+  "dependencies" : {
+    "@jetbrains/youtrack-scripting-api" : "^2018.1.38923"
+  },
+  "youtrack" : {
+    "autoAttached" : false,
+    "readOnly" : false
+  }
+}
