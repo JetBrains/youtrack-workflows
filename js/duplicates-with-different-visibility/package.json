@@ -1,0 +1,12 @@
+{
+  "name" : "duplicates-with-different-visibility",
+  "title" : "Duplicates with Different Visibility",
+  "description" : null,
+  "dependencies" : {
+    "@jetbrains/youtrack-scripting-api" : "^2018.1.38923"
+  },
+  "youtrack" : {
+    "autoAttached" : false,
+    "readOnly" : false
+  }
+}
