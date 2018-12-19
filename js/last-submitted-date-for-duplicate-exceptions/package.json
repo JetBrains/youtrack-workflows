@@ -1,0 +1,12 @@
+{
+  "name" : "last-submitted-date-for-duplicate-exceptions",
+  "title" : "Last Submitted Date for Duplicate Exceptions",
+  "description" : null,
+  "dependencies" : {
+    "@jetbrains/youtrack-scripting-api" : "^2018.1.38923"
+  },
+  "youtrack" : {
+    "autoAttached" : false,
+    "readOnly" : false
+  }
+}
