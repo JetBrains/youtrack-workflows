@@ -1,7 +1,7 @@
 var entities = require('@jetbrains/youtrack-scripting-api/entities');
 
 exports.rule = new entities.Issue.onSchedule({
-  title: 'Close spam issue',
+  title: 'Notify about unanswered feedback',
   cron: '0 0 11 * * ?',
   search: 'State: Unanswered Type: -Spam',
   action: function(ctx) {
