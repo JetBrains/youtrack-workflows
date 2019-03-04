@@ -1,23 +1,14 @@
 var entities = require('@jetbrains/youtrack-scripting-api/entities');
 var search = require('@jetbrains/youtrack-scripting-api/search');
 
-var TITLE = 'Set Assignees by Subsystems';
-var SEARCH = '#Unresolved has: Subsystem has:-Assignee sort by: created asc';
+var TITLE = ''; /* Add a rule title. */
+var SEARCH = ''; /* Add a search query for the issues you want to update. */
 var LIMIT = 100;
 var CRON = '0 * * * * ?';
-var ANCHOR = '#GD-1';
+var ANCHOR = ''; /* Add an id of an issue from the project you want to update. */
 
-var process = function(ctx, issue) {
-  issue.fields[ctx.Assignee.name] = issue.fields[ctx.Subsystem.name].owner;
-};
-
-var REQUIREMENTS = {
-  Subsystem: {
-    type: entities.OwnedField.fieldType
-  },
-  Assignee: {
-    type: entities.User.fieldType
-  }
+var updateIssue = function(ctx, issue) {
+  /* Update an `issue` here. */
 };
 
 exports.rule = entities.Issue.onSchedule({
@@ -34,7 +25,7 @@ exports.rule = entities.Issue.onSchedule({
     
     while (n < LIMIT && !i.done) {
       var issue = i.value;
-      process(ctx, issue);
+      updateIssue(ctx, issue);
       n += 1;
       i = entries.next();
     }
@@ -46,5 +37,7 @@ exports.rule = entities.Issue.onSchedule({
       console.log(name + 'no issues are processed, as nothing is left to process');
     }
   },
-  requirements: REQUIREMENTS
+  requirements: {
+    /* Add a rule requirements. */
+  }
 });
