@@ -38,6 +38,6 @@ exports.rule = entities.Issue.onSchedule({
     }
   },
   requirements: {
-    /* Add a rule requirements. */
+    /* Add rule requirements. */
   }
 });

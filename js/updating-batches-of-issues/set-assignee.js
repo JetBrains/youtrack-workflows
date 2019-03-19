@@ -4,7 +4,7 @@ var search = require('@jetbrains/youtrack-scripting-api/search');
 exports.rule = entities.Issue.onSchedule({
   title: 'Set Assignees from Subsystems',
   cron: '0 * * * * ?',
-  search: '#DM-1',
+  search: '#WS-1',
   muteUpdateNotifications: true,
   action: function(ctx) {
     var searchQuery = '#Unresolved has: Subsystem has:-Assignee sort by: {issue id} asc';

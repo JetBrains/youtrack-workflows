@@ -21,7 +21,7 @@ var guessSubsystem = function(ctx, issue) {
 exports.rule = entities.Issue.onSchedule({
   title: 'Guess Subsystem from summary',
   cron: '0 * * * * ?',
-  search: '#DM-1',
+  search: '#WS-1',
   muteUpdateNotifications: true,
   action: function(ctx) {
     var searchQuery = 'has:-Subsystem sort by: {issue id} asc';
