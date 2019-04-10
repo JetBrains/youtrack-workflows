@@ -1,0 +1,12 @@
+{
+  "name" : "storing-data",
+  "title" : "Storing Data",
+  "description" : null,
+  "dependencies" : {
+    "@jetbrains/youtrack-scripting-api" : "^2018.2.42133"
+  },
+  "youtrack" : {
+    "autoAttached" : false,
+    "readOnly" : false
+  }
+}
