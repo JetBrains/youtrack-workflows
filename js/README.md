@@ -15,11 +15,8 @@ Suggested NPM version is 8.9.1 or higher.
 Run `npm i` to install development dependencies.
 
 The following servers are supported:
-* [Test Instance](https://workflows.myjetbrains.com) - a special InCloud instance,
- where every registered user has Project Admin permissions; consider this instance as 
- a playground and testing sandbox
-* your own instance (Standalone or InCloud)
-* your own instance with HTTPS access with private signed SSL certificate
+* Standalone YouTrack server, both HTTP and HTTPS
+* YouTrack InCloud - get one for free [here](https://www.jetbrains.com/youtrack/download/get_youtrack.html#section=incloud)
 
 Each server requires a list of properties to be set using `npm config set` command.
 For example, to set a token in the following section, use the following command 
@@ -31,18 +28,13 @@ You can easily check the current values of your parameters with the following co
  
 `npm config list` 
 
-### https://workflows.myjetbrains.com
-
-* `token_test`: permanent token for your account on this server (see 
-[Manage-Permanent-Token](https://www.jetbrains.com/help/youtrack/standalone/Manage-Permanent-Token.html))
-
-### your instance without special SSL settings
+### Standalone server without special SSL settings
 
 * `token_own`: permanent token for your account on this server (see 
 [Manage-Permanent-Token](https://www.jetbrains.com/help/youtrack/standalone/Manage-Permanent-Token.html))
 * `host_own`: url of your server (e.g. "http://localhost:8081")
 
-### your instance with private signed SSL certificate
+### Standalone server with private signed SSL certificate
 
 * `token_ssl`: permanent token for your account on this server (see 
 [Manage-Permanent-Token](https://www.jetbrains.com/help/youtrack/standalone/Manage-Permanent-Token.html))
@@ -59,11 +51,6 @@ Valid commands
 --------------
 
 ```
-# At https://workflows.myjetbrains.com
-npm run list-test
-npm run download-test -- <wf-name>
-npm run upload-test -- <wf-name>
-
 # At your own instance
 npm run list-own
 npm run download-own -- <wf-name>
