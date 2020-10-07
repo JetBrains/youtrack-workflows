@@ -1,0 +1,12 @@
+{
+  "name" : "calculate-tms-stats",
+  "title" : "calculate-tms-stats",
+  "description" : null,
+  "dependencies" : {
+    "@jetbrains/youtrack-scripting-api" : "^2020.3.4313"
+  },
+  "youtrack" : {
+    "autoAttached" : false,
+    "readOnly" : false
+  }
+}

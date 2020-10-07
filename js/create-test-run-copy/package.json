@@ -1,0 +1,12 @@
+{
+  "name" : "create-test-run-copy",
+  "title" : "create test run copy",
+  "description" : null,
+  "dependencies" : {
+    "@jetbrains/youtrack-scripting-api" : "^2020.3.11990"
+  },
+  "youtrack" : {
+    "autoAttached" : false,
+    "readOnly" : false
+  }
+}
