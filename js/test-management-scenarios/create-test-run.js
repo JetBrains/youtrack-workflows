@@ -1,16 +1,16 @@
 var workflow = require('@jetbrains/youtrack-scripting-api/workflow');
 var entities = require('@jetbrains/youtrack-scripting-api/entities');
-var utils = require('../calculate-tms-stats/utils');
+var utils = require('./utils');
  
-exports.rule = entities.Issue.action({
+exports.rule = entities.Issue.action({ 
   title: 'Create Test Run copy',
   command: 'Test Run Creation',
   guard: function(ctx) {
-    return ctx.issue.isReported && (ctx.issue.Type.name == ctx.Type.TestRun.name);
+    return ctx.issue.isReported && (ctx.issue.Type.name == ctx.Type.TestRun.name); 
   },
   action: function(ctx) {
     var issue = ctx.issue;
-    var TestRunCopy = issue.copy(issue.project);
+    var TestRunCopy = issue.copy(issue.project); 
     TestRunCopy.Status = ctx.Status.InProgress; 
     var oldTestList = issue.links[ctx.Subtask.outward];
     oldTestList.forEach(function(v) {

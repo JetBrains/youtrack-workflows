@@ -1,0 +1,12 @@
+{
+  "name" : "test-management-scenarios",
+  "title" : "test-management-scenarios",
+  "description" : null,
+  "dependencies" : {
+    "@jetbrains/youtrack-scripting-api" : "^2020.6.3319"
+  },
+  "youtrack" : {
+    "autoAttached" : false,
+    "readOnly" : false
+  }
+}

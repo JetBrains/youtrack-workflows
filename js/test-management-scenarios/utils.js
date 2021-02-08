@@ -8,10 +8,10 @@ exports.calculateStatuses = function(parent) {
     parent.links['parent for'].forEach(function(tr) {
       totalTR++;
       if (tr.Status.name == 'Passed') {
-        totalFailed++;
+        totalPassed++;
       }
       if (tr.Status.name == 'Failed') {
-        totalPassed++;
+        totalFailed++;
       }
     });
     parent.fields['Total number of test cases'] = totalTR;

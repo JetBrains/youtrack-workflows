@@ -9,7 +9,7 @@
 var entities = require('@jetbrains/youtrack-scripting-api/entities');
 var utils = require('./utils'); 
 
-exports.rule = entities.Issue.onChange({
+exports.rule = entities.Issue.onChange({ 
   title: 'Update stats when links are adjusted',  
   guard: function(ctx) {
     var issue = ctx.issue;

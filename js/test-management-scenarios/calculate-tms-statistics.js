@@ -6,18 +6,18 @@
  * https://www.jetbrains.com/help/youtrack/incloud/2020.3/Quick-Start-Guide-Workflows-JS.html
  */
 
-var entities = require('@jetbrains/youtrack-scripting-api/entities');
+var entities = require('@jetbrains/youtrack-scripting-api/entities'); 
 var utils = require('./utils'); 
 
 exports.rule = entities.Issue.onChange({
-  title: 'Switch to the next tes tcase',  
+  title: 'Switch to the next test case',
   guard: function(ctx) {
     var issue = ctx.issue;
     return issue.isChanged(ctx.Status) &&  (issue.isReported)  && (issue.Type.name == ctx.Type.TestExecution.name);
   },
   action: function(ctx) {
     var issue = ctx.issue;
-    if (!issue.links['subtask of'].isEmpty) {
+    if (!issue.links['subtask of'].isEmpty()) { 
      var parent = issue.links['subtask of'].first();
     utils.calculateStatuses(parent);      
     } 

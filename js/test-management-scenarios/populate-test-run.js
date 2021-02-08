@@ -8,7 +8,7 @@
 
 var entities = require('@jetbrains/youtrack-scripting-api/entities');
 var workflow = require('@jetbrains/youtrack-scripting-api/workflow');
-
+ 
 exports.rule = entities.Issue.onChange({
   title: 'Populate-test-run',
   guard: function(ctx) {

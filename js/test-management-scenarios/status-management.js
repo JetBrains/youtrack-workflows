@@ -10,7 +10,7 @@
 
 
 var entities = require('@jetbrains/youtrack-scripting-api/entities');
-var workflow = require('@jetbrains/youtrack-scripting-api/workflow');
+var workflow = require('@jetbrains/youtrack-scripting-api/workflow'); 
 
 
 exports.rule = entities.Issue.stateMachine({
@@ -25,7 +25,7 @@ exports.rule = entities.Issue.stateMachine({
           targetState: 'Failed',
           action: function(ctx) {
             var issue = ctx.issue;
-            if (!issue.links['subtask of'].isEmpty) {
+            if (!issue.links['subtask of'].isEmpty()) {
               var parent = issue.links['subtask of'].first();
               var TestRunList = parent.links[ctx.Subtask.outward];
               var resultSet = null;
@@ -59,7 +59,7 @@ exports.rule = entities.Issue.stateMachine({
           targetState: 'Passed',
           action: function(ctx) {
             var issue = ctx.issue;
-            if (!issue.links['subtask of'].isEmpty) {
+            if (!issue.links['subtask of'].isEmpty()) {
               var parent = issue.links['subtask of'].first();
               var TestRunList = parent.links[ctx.Subtask.outward];
               var resultSet = null;
@@ -97,7 +97,7 @@ exports.rule = entities.Issue.stateMachine({
           targetState: 'Failed',
           action: function(ctx) {
             var issue = ctx.issue;
-            if (!issue.links['subtask of'].isEmpty) {
+            if (!issue.links['subtask of'].isEmpty()) {
              var parent = issue.links['subtask of'].first();
               var TestRunList = parent.links[ctx.Subtask.outward];
               var resultSet = null;
@@ -128,7 +128,7 @@ exports.rule = entities.Issue.stateMachine({
           targetState: 'No Run',
           action: function(ctx) {
             var issue = ctx.issue;
-            if (!issue.links['subtask of'].isEmpty) {
+            if (!issue.links['subtask of'].isEmpty()) {
               var parent = issue.links['subtask of'].first();
               var TestRunList = parent.links[ctx.Subtask.outward];
               var ActiveTestRun = false;
@@ -161,7 +161,7 @@ exports.rule = entities.Issue.stateMachine({
           targetState: 'Passed',
           action: function(ctx) {
             var issue = ctx.issue;
-            if (!issue.links['subtask of'].isEmpty) {
+            if (!issue.links['subtask of'].isEmpty()) {
               var parent = issue.links['subtask of'].first();
               var TestRunList = parent.links[ctx.Subtask.outward];
               var resultSet = null;
@@ -195,7 +195,7 @@ exports.rule = entities.Issue.stateMachine({
           targetState: 'No Run',
           action: function(ctx) {
             var issue = ctx.issue;
-            if (!issue.links['subtask of'].isEmpty) {
+            if (!issue.links['subtask of'].isEmpty()) {
               var parent = issue.links['subtask of'].first();
               var TestRunList = parent.links[ctx.Subtask.outward];
               var ActiveTestRun = false;
