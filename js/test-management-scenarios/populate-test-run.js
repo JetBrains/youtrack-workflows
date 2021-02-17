@@ -34,7 +34,7 @@ exports.rule = entities.Issue.onChange({
         return;
          TestCaseRun.links[linkType].clear();
       });
-      TestCaseRun.summary = "[TEST_CASE_EXECUTION" + "] [" + TestCaseRun.summary + "]";
+      TestCaseRun.summary = "[TEST_CASE_EXECUTION] [" + TestCaseRun.summary + "]";
 
       // Links population 
       TestCaseRun.links[ctx.Subtask.inward].add(issue);
