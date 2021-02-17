@@ -8,6 +8,7 @@
 
 var entities = require('@jetbrains/youtrack-scripting-api/entities');
 var workflow = require('@jetbrains/youtrack-scripting-api/workflow');
+var utils = require('./utils');
  
 exports.rule = entities.Issue.onChange({
   title: 'Populate-test-run',
@@ -16,32 +17,21 @@ exports.rule = entities.Issue.onChange({
     return !issue.isChanged('project') && issue.Type && (issue.Type.name == ctx.Type.TestRun.name) && issue.links[ctx.Execution.outward].added.isNotEmpty() && issue.isReported;
   },
   action: function(ctx) {
-    var issue = ctx.issue;
-    var totalTestRuns = issue.links[ctx.Execution.outward].added.size;
-    issue.links[ctx.Execution.outward].added.forEach(function(TestCase) {
-      var message = '<a href="' + TestCase.url + '"> ' + TestCase.id + '</a>';
-      workflow.check((TestCase.Type.name == ctx.Type.TestCase.name) || (TestCase.Type.name == ctx.Type.TestSuite.name), workflow.i18n('\'Test Run\' can be linked to \'Test Case\' and \'Test Suite\' only, but {0} has \'{1}\' type!', message, TestCase.Type.name));
-      TestCase.links[ctx.Execution.inward].delete(issue);
+    var testRun = ctx.issue;
+  
+    testRun.links[ctx.Execution.outward].added.forEach(function (testCase) {
 
-      // New issue creation 
-      var TestCaseRun = TestCase.copy();
-      TestCaseRun.Type = ctx.Type.TestExecution.name;
-      TestCaseRun.Status = ctx.Status.NoRun.name;
-
-      // Remove all links from Test Case Execution       
-      Object.keys(TestCaseRun.links).forEach(function(linkType) {
-       if (!TestCaseRun.links[linkType])
-        return;
-         TestCaseRun.links[linkType].clear();
-      });
-      TestCaseRun.summary = "[TEST_CASE_EXECUTION" + "] [" + TestCaseRun.summary + "]";
-
-      // Links population 
-      TestCaseRun.links[ctx.Subtask.inward].add(issue);
-      issue.links[ctx.Subtask.outward].add(TestCaseRun);
-      TestCaseRun.links[ctx.Execution.outward].add(TestCase);
+      if (testCase.Type.name == ctx.Type.TestCase.name) {
+        utils.createTestCaseExecution(workflow, ctx, testRun, testCase);       
+      }
+      else { // We are a Test Suite so clone any subtasks that are Test Cases
+        testCase.links[ctx.Subtask.outward].forEach(function (subTestCase) {
+          utils.createTestCaseExecution(workflow, ctx, testRun, subTestCase);     
+       });
+        
+        testCase.links[ctx.Execution.inward].delete(testRun);
+      }
     });
-    issue.fields['Total number of test cases'] = totalTestRuns;
   },
   requirements: {
     Execution: {
