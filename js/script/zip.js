@@ -4,6 +4,7 @@ var process = require('process');
 var archiver = require('archiver');
 
 function zipFolder(srcFolder, zipFilePath) {
+  fs.mkdirSync(path.dirname(zipFilePath), { recursive: true });
   var output = fs.createWriteStream(zipFilePath);
   var zipArchive = archiver('zip');
   
