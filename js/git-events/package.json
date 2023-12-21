@@ -1,0 +1,12 @@
+{
+  "name": "git-events",
+  "title": "GIT Events",
+  "description": null,
+  "dependencies" : {
+    "@jetbrains/youtrack-scripting-api" : "^2020.3.6638"
+  },
+  "youtrack": {
+    "autoAttached": false,
+    "readOnly": false
+  }
+}
