@@ -23,7 +23,7 @@ exports.rule = entities.Issue.onSchedule({
       month + ' ' + year + ' Internal Newsletter');
     newIssue.fields.Assignee = ctx.author;
     newIssue.fields.Subsystem = ctx.Subsystem.Newsletters;
-    newIssue.fields.DD = date.getTime();
+    newIssue.fields[ctx.DD.name] = date.getTime();
   },
   requirements: {
     Assignee: {
