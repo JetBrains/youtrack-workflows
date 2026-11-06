@@ -1,4 +1,6 @@
-[![official JetBrains project](http://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
+[![obsolete JetBrains project](https://jb.gg/badges/obsolete-flat-square.svg)](https://github.com/JetBrains#jetbrains-on-github)
+
+> **This repository is archived and is not maintained.** The workflows remain available for reference. For current guidance and examples, see the [YouTrack workflow documentation](https://www.jetbrains.com/help/youtrack/devportal/youtrack-workflow-reference.html).
 
 Welcome to YouTrack Custom Workflow Repository!
 ===============================================
